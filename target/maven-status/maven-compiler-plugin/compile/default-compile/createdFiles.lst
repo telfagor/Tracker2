@@ -1,0 +1,9 @@
+input\ConsoleInput.class
+input\Input.class
+exceptions\InvalidIdException.class
+exceptions\InvalidStringException.class
+start\StartUI.class
+model\Item.class
+tracker\Tracker.class
+start\Main.class
+input\InputValidation.class
