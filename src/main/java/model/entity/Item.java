@@ -1,9 +1,10 @@
-package model;
+package model.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.NonNull;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -19,7 +20,8 @@ public class Item {
     private int id;
     private String name;
 
-    public Item(String name) {
+    public Item(@NonNull String name) {
+        assert !"".equals(name);
         this.name = name;
     }
 

@@ -1,8 +1,8 @@
 package start;
 
 import input.Input;
-import model.Item;
-import tracker.Tracker;
+import model.entity.Item;
+import model.tracker.Tracker;
 
 import java.util.List;
 
@@ -11,8 +11,8 @@ public class StartUI {
     public void createItem(Input input, Tracker tracker) {
         System.out.println("=== Create a new Item ===");
         String name = input.askStr("Enter name: ");
-        Item item = new Item();
-        tracker.add(item, name);
+        Item item = new Item(name);
+        tracker.add(item);
         System.out.println("Added item: " + item);
     }
 
@@ -30,7 +30,7 @@ public class StartUI {
         System.out.println("=== Replace item ===");
         String name = input.askStr("Enter name: ");
         int id = input.askInt("Enter id: ");
-        Item item = new Item();
+        Item item = new Item(name);
         tracker.replace(item, id);
         System.out.println("Item changed successfully!");
     }

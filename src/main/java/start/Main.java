@@ -2,7 +2,7 @@ package start;
 
 import input.ConsoleInput;
 import input.Input;
-import tracker.Tracker;
+import model.tracker.Tracker;
 
 public class Main {
     public static void main(String[] args) {

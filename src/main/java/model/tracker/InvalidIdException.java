@@ -1,4 +1,4 @@
-package exceptions;
+package model.tracker;
 
 public class InvalidIdException extends RuntimeException {
     public InvalidIdException(String message) {
