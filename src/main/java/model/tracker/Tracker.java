@@ -6,7 +6,7 @@ import model.entity.Item;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Tracker {
+public final class Tracker {
     private final List<Item> items = new ArrayList<>();
     private int ids = 0;
 
@@ -20,14 +20,14 @@ public class Tracker {
         assert id > -1;
         validateId(id);
 
-        Item rsl = null;
+        Item result = null;
         for (Item item : items) {
             if (item.getId() == id) {
-                rsl = item;
+                result = item;
                 break;
             }
         }
-        return rsl;
+        return result;
     }
 
     public List<Item> findAll() {
@@ -51,9 +51,9 @@ public class Tracker {
         assert id > -1;
         validateId(id);
 
-        int rsl = indexOf(id);
+        int result = indexOf(id);
         item.setId(id);
-        items.set(rsl, item);
+        items.set(result, item);
     }
 
     public void delete(int id) {
@@ -65,50 +65,31 @@ public class Tracker {
     }
 
     private int indexOf(int id) {
-        int rsl = -1;
+        int index = -1;
         for (int i = 0; i < items.size(); i++) {
             Item item = items.get(i);
             if (item.getId() == id) {
-                rsl = i;
+                index = i;
                 break;
             }
         }
-        return rsl;
+        return index;
     }
 
     private void validateId(int id) {
-        boolean flag = false;
         for (Item item : items) {
             if (item.getId() == id) {
-                flag = true;
-                break;
+                return;
             }
         }
 
-        if (!flag) {
-            throw new InvalidIdException("This id does not exist!");
-        }
+        throw new InvalidIdException("This id does not exist!");
     }
 
     private void validateName(String name) {
-        boolean flag = false;
         for (Item item : items) {
             if (name.equalsIgnoreCase(item.getName())) {
-                flag = true;
-                break;
-            }
-        }
-
-        if (!flag) {
-            throw new InvalidStringException("This name does not exist!");
-        }
-    }
-
-
-    private void validateName2(String name) {
-        for (Item item : items) {
-            if (name.equalsIgnoreCase(item.getName())) {
-               return;
+                return;
             }
         }
 

@@ -2,7 +2,7 @@ package input;
 
 import java.util.Scanner;
 
-public class InputValidation {
+public final class InputValidation {
     final private Scanner console = new Scanner(System.in);
 
     int validationIntValue() {

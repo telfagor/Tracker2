@@ -1,6 +1,6 @@
 package input;
 
-public class ConsoleInput implements Input {
+public final class ConsoleInput implements Input {
     private final InputValidation input = new InputValidation();
 
     @Override

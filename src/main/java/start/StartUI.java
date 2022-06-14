@@ -6,7 +6,7 @@ import model.tracker.Tracker;
 
 import java.util.List;
 
-public class StartUI {
+public final class StartUI {
 
     public void createItem(Input input, Tracker tracker) {
         System.out.println("=== Create a new Item ===");
@@ -71,7 +71,7 @@ public class StartUI {
         System.out.println();
     }
 
-    public void init(Input input, Tracker tracker) {
+    public void start(Input input, Tracker tracker) {
         boolean run = true;
         while (run) {
             showMenu();

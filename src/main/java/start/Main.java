@@ -8,6 +8,6 @@ public class Main {
     public static void main(String[] args) {
         Input input = new ConsoleInput();
         Tracker tracker = new Tracker();
-        new StartUI().init(input, tracker);
+        new StartUI().start(input, tracker);
     }
 }

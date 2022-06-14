@@ -14,7 +14,7 @@ import java.time.format.DateTimeFormatter;
 @Setter
 @AllArgsConstructor
 
-public class Item {
+public final class Item {
     private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("dd-MMMM-yyyy HH:mm:ss");
     private final LocalDateTime created = LocalDateTime.now();
     private int id;
